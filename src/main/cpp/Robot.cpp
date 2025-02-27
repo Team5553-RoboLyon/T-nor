@@ -296,10 +296,11 @@ void Robot::AutonomousInit()
   m_countWait = 0;
   m_robotContainer.m_drivetrain.IsAuto = true;
   // m_stateTakeNote = StateTakeNote::nule;
-  /*
-  m_TrajectoryPack.load("/home/lvuser/auto/1metre.trk");
 
-  m_gyro.Reset();
+  m_TrajectoryPack.load("/home/lvuser/auto/1metre.trk");
+  m_TrajectoryPack.exportTxt("/home/lvuser/auto/test1m.txt");
+
+  // m_gyro.Reset();
 
   m_CrtzL.m_forwardKv = 2.961074589352691f;
   m_CrtzL.m_backwardKv = 2.955671698032205f;         // = m_kv[1]
@@ -316,9 +317,9 @@ void Robot::AutonomousInit()
   m_CrtzR.m_backwardIntercept = -0.3249879861355316f;
 
   m_follower.initialize(&m_TrajectoryPack);
-  m_state = 0;*/
+  m_state = 0;
 
-  m_stateShootOnly = StateShootOnly::Backward;
+  // m_stateShootOnly = StateShootOnly::Backward;
   // m_stateCenter2Auto = StateCenter2Auto::Nearshoot;
   // m_stateNearShoot = StateNearShoot::PreShoot;
 }
@@ -326,7 +327,7 @@ void Robot::AutonomousPeriodic()
 {
   // TakeNoteSwitch();
 
-  ShootOnly();
+  // ShootOnly();
   // Center2Auto();
 
   NLRAMSETEOUTPUT output;
@@ -387,7 +388,7 @@ void Robot::AutonomousPeriodic()
   //   NErrorIf(1, NERROR_UNAUTHORIZED_CASE);
   //   break;
   // }
-  /*
+
   m_encoderLeftValue = m_robotContainer.m_drivetrain.m_EncoderLeft.GetDistance();
   m_encoderRightValue = m_robotContainer.m_drivetrain.m_EncoderRight.GetDistance();
   m_gyroAngle = 0.0;
@@ -450,7 +451,7 @@ void Robot::AutonomousPeriodic()
   {
     PreShoot();
   }
-  */
+
   std::cout << "droite" << m_robotContainer.m_drivetrain.m_EncoderRight.GetDistance() << std::endl;
   std::cout << "gauche" << m_robotContainer.m_drivetrain.m_EncoderLeft.GetDistance() << std::endl;
 }

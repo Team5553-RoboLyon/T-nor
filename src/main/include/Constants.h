@@ -139,7 +139,7 @@
 #define CAMERA_HEIGHT 1.0
 #define TARGET_HEIGHT 1.0
 #define SHOOTER_TABLE_SIZE 19
-#define ID_APRILTAG_MIDDLE 4
-#define ID_APRILTAG_LEFT 3
+#define ID_APRILTAG_MIDDLE 8
+#define ID_APRILTAG_LEFT 7
 
 // ##################################################################################
